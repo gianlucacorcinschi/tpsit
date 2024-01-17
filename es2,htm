@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stampa Numeri e Percentuale</title>
+</head>
+<body>
+
+    <label for="numeroInput">Inserisci un numero:</label>
+    <input type="number" id="numeroInput">
+    <button onclick="stampaNumeriEPercentuale()">Stampa Numeri e Percentuale</button>
+
+    <div id="risultato"></div>
+
+    <script>
+        function stampaNumeriEPercentuale() {
+            var numeroInput = parseInt(document.getElementById("numeroInput").value);
+            var risultatoString = "";
+
+            for (var i = 1; i <= numeroInput; i++) {
+                risultatoString += i + "<br>";
+            }
+
+            var percentuale = parseInt(numeroInput * 0.1);
+            risultatoString += "10% del numero in input " + percentuale;
+
+            document.getElementById("risultato").innerHTML = risultatoString;
+        }
+    </script>
+
+</body>
+</html>
