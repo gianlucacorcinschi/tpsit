@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolo Area Cerchio</title>
+</head>
+<body>
+  <h2>Calcola l'Area di un Cerchio</h2>
+  <label for="raggio">Inserisci il raggio del cerchio:</label>
+  <input type="number" id="raggio">
+  <button onclick="calcolaArea()">Calcola Area</button>
+
+  <div id="risultato"></div>
+  <button id="stampaQuadrato" style="display:none;" onclick="stampaQuadrato()">Stampa Quadrato</button>
+
+  <script>
+    function calcolaArea() {
+      var raggio = parseFloat(document.getElementById('raggio').value);
+      var area = Math.PI * Math.pow(raggio, 2);
+      document.getElementById('risultato').innerText = "L'area del cerchio è: " + area.toFixed(2);
+
+      // Mostra il bottone per stampare il quadrato
+      document.getElementById('stampaQuadrato').style.display = 'block';
+      sessionStorage.setItem('areaCerchio', area.toFixed(2)); // Memorizza l'area per l'uso successivo
+    }
+
+    function stampaQuadrato() {
+      var areaCerchio = parseFloat(sessionStorage.getItem('areaCerchio'));
+      var latoQuadrato = Math.sqrt(areaCerchio);
+      var quadratoHTML = '<div style="width: 20px; height: 20px; background-color: blue;"></div>'.repeat(latoQuadrato);
+      document.getElementById('risultato').innerHTML = quadratoHTML;
+    }
+  </script>
+</body>
+</html>
