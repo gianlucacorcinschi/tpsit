@@ -1,0 +1,22 @@
+// Chiedi all'utente di inserire il peso in kg
+var peso = parseFloat(prompt("Inserisci il tuo peso in kg:"));
+
+// Chiedi all'utente di inserire l'altezza in metri
+var altezza = parseFloat(prompt("Inserisci la tua altezza in metri:"));
+
+// Calcola l'IMC utilizzando la formula
+var imc = peso / (altezza * altezza);
+
+// Visualizza l'IMC
+console.log("Il tuo IMC è: " + imc.toFixed(2));
+
+// Classificazione del peso
+if (imc < 18.5) {
+    console.log("Classificazione: Sottopeso");
+} else if (imc >= 18.5 && imc < 25) {
+    console.log("Classificazione: Normopeso");
+} else if (imc >= 25 && imc < 30) {
+    console.log("Classificazione: Sovrappeso");
+} else {
+    console.log("Classificazione: Obesità");
+}
