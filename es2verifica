@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incremento numerico</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #output {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<button id="btn1" onclick="increment(1)">Bottone 1</button>
+<button id="btn2" onclick="increment(2)">Bottone 2</button>
+<button id="btn3" onclick="increment(3)">Bottone 3</button>
+
+<div id="output">Nessun numero selezionato</div>
+
+<script>
+let currentNumber = 0;
+
+function increment(amount) {
+    switch(amount) {
+        case 1:
+            currentNumber += 2;
+            break;
+        case 2:
+            currentNumber += 3;
+            break;
+        case 3:
+            currentNumber += 7;
+            break;
+        default:
+            break;
+    }
+    document.getElementById('output').innerText = 'Numero attuale: ' + currentNumber;
+}
+</script>
+
+</body>
+</html>
