@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #drinkList {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="instructionsBtn">Istruzioni</button>
+    <button id="menuBtn">Menu Drink</button>
+    <button id="ordersBtn">Ordini</button>
 
+    <div id="drinkList">
+        <ul>
+            <li>Drink 1</li>
+            <li>Drink 2</li>
+            <li>Drink 3</li>
+            <!-- Aggiungi altri drink secondo necessità -->
+        </ul>
+    </div>
+
+    <script>
+        const instructionsBtn = document.getElementById('instructionsBtn');
+        const menuBtn = document.getElementById('menuBtn');
+        const ordersBtn = document.getElementById('ordersBtn');
+        const drinkList = document.getElementById('drinkList');
+
+        let orders = [];
+
+        instructionsBtn.addEventListener('click', () => {
+            alert('Ciao');
+        });
+
+        menuBtn.addEventListener('click', () => {
+            alert('Sono un chatbot pronto per servirti');
+        });
+
+        ordersBtn.addEventListener('click', () => {
+            const order = prompt('Inserisci la tua ordinazione:');
+            if (order) {
+                orders.push(order);
+                alert('Ordine registrato: ' + order);
+                displayOrders();
+            }
+        });
+
+        function displayOrders() {
+            const ordersDisplay = orders.join('\n');
+            alert('Lista ordini:\n' + ordersDisplay);
+        }
+    </script>
+</body>
+</html>
